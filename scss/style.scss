@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700');
+@import "normalize";
+@import "layout";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+$active-color: #de5e60;
+$primery-color: #fefefe;
+$cads-color: #2f3238;
+
+body{
+	font: 400 16px/1 'Titillium Web', sans-serif;
+	color: $primery-color;
+
+	background:#145;
+
+}
+
+
+
+/* Layout */
+.ba-container{
+	padding-left: 20px;
+	padding-right: 20px;
+	max-width: 1200px;
+}
+
+
+
+/* Typography */
+a,
+input[type="submit"],
+input[type="button"],
+button{
+	-webkit-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	-moz-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+input[type="submit"],
+input[type="button"],
+button,
+.ba-button{
+	display: inline-block;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover,
+.ba-button:hover{
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+
+	-webkit-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	-moz-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+
+}
+textarea {
+
+}
+
+.ba-header {
+	text-align: center;
+	margin: 50px 0;
+}
+
+.ba-wrapper {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.ba-red {
+	color: $active-color;
+}
+
+.ba-card {
+	margin: 15px 15px;
+	perspective: 500px;
+
+	&__front, &__back {
+		transition: transform .5s ease-in-out;
+		backface-visibility: hidden;
+		box-shadow: 0px 0px 15px 1px rgba(#000,0.7);
+	}
+
+	&__front{
+		border-radius: 10px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		background: url(../img/rubashka3.png)50%;
+		background-size: cover;
+	}
+
+	&__back{
+		display: flex;
+		justify-content: space-around;
+		padding: 15px;
+		border-radius: 10px;
+		min-width: 210px;
+		min-height: 300px;
+		background-color: $cads-color;
+		z-index: 1;
+		transform: rotateY(-180deg);
+	}
+
+	&:hover{
+		.ba-card__back{
+			transform: rotateY(0);
+		}
+		.ba-card__front{
+			transform: rotateY(180deg);
+		}
+	}
+
+	&__object{
+		display: flex;
+		flex-grow: 2;
+		justify-content: space-around;
+	}
+
+	&__col, &__middlecol, &__central {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		span {
+			font-size: 46px;
+		}
+	}
+
+	&__central{
+		justify-content: center;
+
+		h2 {
+			font-size: 72px;
+		}
+	}
+
+	&__middlecol {
+		justify-content: space-around;
+	}
+
+	&__top, &__bottom{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+
+
+	&__bottom{
+		transform: rotate(180deg);
+	}
+}
+
+
